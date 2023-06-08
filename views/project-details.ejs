@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Issue Tracker / project-details</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/project-details.css" />
+  </head>
+
+  <body>
+    <!-- header//////////////////////// -->
+    <header class="heading">
+      <h1>
+        <a href="/"> Issue Tracker </a>
+      </h1>
+    </header>
+
+    <!-- related project////////////////////////// -->
+    <div class="container">
+      <!-- <h2>Projects</h2> -->
+
+      <div class="list-container">
+        <h2>Project</h2>
+
+        <div class="list-box">
+          <div class="list">
+            <h3><%= project.name %></h3>
+            <!-- <br /> -->
+            <p>&nbsp; &nbsp; &nbsp;<%= project.disc %></p>
+            <br />
+            <br />
+            <p class="auther"><%= project.auther %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- togle for issue creater(bug)////////////////////// -->
+      <div class="close-open" style="margin-top: 20px">
+        <button class="open-button" onclick="togleButton()">
+          Form Open / Close
+        </button>
+      </div>
+
+      <!-- form to create bug///////////////////////// -->
+      <div class="create-form-box" id="myForm">
+        <form action="/bug/create" id="create-form" method="post">
+          <input type="text" name="title" required placeholder="Title..." />
+          <input
+            type="text"
+            name="bugAuther"
+            required
+            placeholder="Auther Name"
+          />
+          <textarea
+            name="bugDisc"
+            id=""
+            cols="29"
+            minlength="30"
+            rows="4"
+            placeholder="discription..."
+            required
+          ></textarea>
+
+          <!-- bugs/////////////// -->
+          <div class="checkbox-container">
+            <div class="seprate-input-checkbox">
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="bug"
+                    onclick="selectTogel('select1', 'checked1')"
+                    class="checked"
+                    id="checked1"
+                    value="Performance Degradation"
+                  />
+                </div>
+                <div>
+                  <label for="Performance-degradation"
+                    >Performance Degradation
+                  </label>
+                </div>
+              </div>
+              <div id="select1">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="seprate-input-checkbox">
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="bug"
+                    onclick="selectTogel('select2', 'checked2')"
+                    class="checked"
+                    id="checked2"
+                    value="Data Lose Ishu"
+                  />
+                </div>
+                <div>
+                  <label for="data-lose-ishu">Data Lose Ishu</label>
+                </div>
+              </div>
+              <div id="select2">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="seprate-input-checkbox">
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="bug"
+                    onclick="selectTogel('select3', 'checked3')"
+                    class="checked"
+                    id="checked3"
+                    value="Broken Link"
+                  />
+                </div>
+                <div>
+                  <label for="broken-link">Broken Link</label>
+                </div>
+              </div>
+              <div id="select3">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="seprate-input-checkbox">
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="bug"
+                    onclick="selectTogel('select4', 'checked4')"
+                    class="checked"
+                    id="checked4"
+                    value="Accessibility Issue"
+                  />
+                </div>
+                <div>
+                  <label for="accessibility-issue">Accessibility Issue</label>
+                </div>
+              </div>
+              <div id="select4">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="seprate-input-checkbox">
+              <div class="checkbox-inner-form">
+                <div class="input-box">
+                  <input
+                    type="checkbox"
+                    name="bug"
+                    onclick="selectTogel('select5', 'checked5')"
+                    class="checked"
+                    id="checked5"
+                    value="Incorrect Calculation"
+                  />
+                </div>
+                <div>
+                  <label for="incorrect-calculation"
+                    >Incorrect Calculation</label
+                  >
+                </div>
+              </div>
+              <div id="select5">
+                <select name="bugLevel" id="" class="select-box">
+                  <option selected disabled>select</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+
+      <!-- list of related bugs/////////////////////// -->
+      <div class="list-container" style="margin-top: 50px">
+        <h2>Related Bug</h2>
+
+        <!-- filter ///////////////////// -->
+        <div class="filter-container">
+          <p>filter / search</p>
+          <div class="filter-bugs">
+            <form action="/bug/filter">
+              <select name="bug" class="select-opt" id="">
+                <option value="Performance Degradation">
+                  Performance Degradation
+                </option>
+                <option value="Data Lose Ishu">Data Lose Ishu</option>
+                <option value="Broken Link">Broken Link</option>
+                <option value="Accessibility Issue">Accessibility Issue</option>
+                <option value="Incorrect Calculation">
+                  Incorrect Calculation
+                </option>
+              </select>
+
+              <input
+                type="text"
+                name="bugAuther"
+                placeholder="filter by Auther"
+              />
+
+              <br />
+              <button type="submit">filter</button>
+            </form>
+          </div>
+
+          <br />
+          <div class="search-bar">
+            <form action="/bug/search">
+              <input
+                type="search"
+                id="searchbar"
+                name="search"
+                placeholder="search by titel and disc..."
+                required
+              />
+              <br />
+              <button>search</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- list of bugs//////////////////////// -->
+        <div class="list-box">
+          <% if(data.length == 0) { %>
+          <div class="list">
+            <h2>There is No bug!</h2>
+          </div>
+          <% } %> <% for(issue of data){ %>
+          <div class="list" id="bugs-box">
+            <h3><%= issue.title %></h3>
+            <!-- <br /> -->
+            <p>&nbsp; &nbsp; &nbsp;<%= issue.bugDisc %></p>
+            <br />
+            <div class="bugs">
+              <h4>Bugs:</h4>
+              <% for(let i = 0; i < issue.bug.length; i++) { %>
+              <p>
+                &nbsp; &nbsp; &nbsp;
+                <span style="color: red"> * </span>&nbsp; <%=issue.bug[i] %> (
+                <%= issue.bugLevel[i]%> )
+              </p>
+              <% } %>
+            </div>
+            <p class="auther"><%= issue.bugAuther %></p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+/* checkbox container/////////////// */
+.checkbox-container {
+  text-align: left;
+  width: 85%;
+  margin: auto;
+}
+
+/* input in checkbox//////////////////// */
+input[type="checkbox"] {
+  /* width: 20px; */
+  margin-top: -100px;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+/* all selecters /////////////////////////// */
+#select1,
+#select2,
+#select3,
+#select4,
+#select5 {
+  display: none;
+  padding-left: 6px;
+  width: 85%;
+  margin: auto;
+  margin-top: -10px;
+}
+
+.select-box {
+  cursor: pointer;
+}
+
+/* form part of checkbox//////////////// */
+.checkbox-inner-form {
+  /* display: flex; */
+  display: flex;
+}
+.checkbox-inner-form .input-box {
+  margin-right: 6px;
+}
+
+/* <!-- filter ///////////////////// --> */
+.filter-container {
+  border: 1px solid black;
+  box-shadow: 0 0 6px 1px black;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+/* input and buttons in filter//////////// */
+.filter-container input {
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+.select-opt {
+  width: 171px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.filter-container button {
+  padding: 0px 5px;
+  text-align: right;
+  cursor: pointer;
+}
+.filter-bugs {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* bugss//////////////////// */
+#bugs-box {
+  background-color: rgba(0, 0, 0, 0.797);
+}
+.bugs h4 {
+  color: red;
+  margin-bottom: 5px;
+}
+.bugs p {
+  color: rgb(198, 196, 196);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* media for 481px and above???????????????????????? */
+@media screen and (min-width: 481px) {
+  .bugs p {
+    font-size: 16px;
+  }
+}
+
+/* media for 1081px and above???????????????????????? */
+@media screen and (min-width: 1081px) {
+  /* form part of checkbox//////////////// */
+  .checkbox-container {
+    text-align: left;
+    width: 85%;
+    margin: auto;
+  }
+  .checkbox-inner-form .input-box {
+    margin-top: 8px;
+    margin-right: 6px;
+  }
+
+  /* input type of checkbox//////////////// */
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .seprate-input-checkbox {
+    margin-bottom: 5px;
+  }
+  .seprate-input-checkbox label {
+    font-size: 16px;
+  }
+
+  /* filter//////////////// */
+  .filter-container {
+    width: 48%;
+  }
+
+  /* bugs/////////////////////// */
+  .bugs h4 {
+    margin-bottom: 10px;
+  }
+}

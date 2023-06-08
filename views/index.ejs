@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Issue Tracker / home</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="heading">
+      <h1>
+        <a href=""> Issue Tracker </a>
+      </h1>
+    </header>
+
+    <!-- container -->
+    <div>
+
+    <div class="container">
+      <!-- <h2>Projects</h2> -->
+      <div class="close-open">
+        <button class="open-button" onclick="togleButton()">
+          Form Open / Close
+        </button>
+      </div>
+
+      <!-- crate form//////////////// -->
+      <div class="create-form-box" id="myForm">
+        <form action="/project/create" id="create-form" method="post">
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Project Name...."
+          />
+          <input type="text" name="auther" required placeholder="Auther Name" />
+          <textarea
+            name="disc"
+            id=""
+            cols="29"
+            rows="4"
+            minlength="30"
+            placeholder="discription..."
+            required
+          ></textarea>
+
+          <input type="submit" value="create project" />
+        </form>
+      </div>
+
+      <!-- list of project///////////////////////// -->
+      <div class="list-container">
+        <h2>Project List</h2>
+
+        <div class="list-box">
+          <% for(let i = 0; i < data.length; i++) { %>
+
+          <div class="list">
+            <a href="/project/<%=data[data.length-1-i].id%>">
+              <h3><%= data[data.length-1-i].name%></h3>
+              <!-- <br /> -->
+              <p>&nbsp; &nbsp; &nbsp;<%= data[data.length-1-i].disc %></p>
+              <br />
+              <p class="auther"><%= data[data.length-1-i].auther %></p>
+            </a>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+  </body>
+</html>
